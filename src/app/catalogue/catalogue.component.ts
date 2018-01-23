@@ -1,4 +1,4 @@
-import { Catalogue } from './../catalogue';
+import { Categories } from './../categories';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueComponent implements OnInit {
 
-  catalogue : Catalogue = {
+  catalogue : Categories = {
     id:1,
     name:'Electronics'
   };
