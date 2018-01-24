@@ -1,7 +1,10 @@
-<h2>{{ catalogue.name | uppercase }} Details</h2>
-<div><span>id: </span>{{catalogue.id}}</div>
-<div>
-    <label>name:
-      <input [(ngModel)]="catalogue.name" placeholder="name">
-    </label>
-</div>
+<ul class="categories">
+  <li *ngFor="let category of categories"
+  [class.selected]="category === selectedCategory"
+  (click)="onSelect(category)">
+    <span class="badge">{{category.id}}</span> {{category.name}}
+  </li>
+</ul>
+
+<!-- <app-catalogue-detail [category] = "selectedCategory"></app-catalogue-detail> -->
+<app-catalogue-detail [category]="selectedCategory"></app-catalogue-detail>

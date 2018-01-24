@@ -1,5 +1,9 @@
-import { Categories } from './../categories';
+import { CatalogueDetailComponent } from './../catalogue-detail/catalogue-detail.component';
+import { Category } from './../category';
 import { Component, OnInit } from '@angular/core';
+import { CATEGORIES } from './../mock-categories';
+
+
 
 @Component({
   selector: 'app-catalogue',
@@ -8,15 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueComponent implements OnInit {
 
-  catalogue : Categories = {
-    id:1,
-    name:'Electronics'
-  };
+  categories = CATEGORIES;
 
+  selectedCategory: Category;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect(category: Category): void {
+    this.selectedCategory = category;
+  }
 }
